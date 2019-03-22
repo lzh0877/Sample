@@ -41,8 +41,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected View contentView = null;
     protected View blankView = null;
     protected ConsumerDialog dialog;
-    private TYPE type;
     private ViewDataBinding binding;
+    private TYPE type;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +63,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @param layoutResID activity布局文件
+     * @param type        加载方式{@link TYPE.BKF} 使用ButterKnife加载View
+     *                    {@link TYPE.DBING} 使用DataBinding加载View
+     *                    {@link TYPE.DEFAULT} 默认加载View。
+     *                    除默认加载View外，均设置Toolbar、SwipeRefreshLayout、空白页{@link BaseActivity.blankView}
+     */
     protected void setContentView(int layoutResID, TYPE type) {
         this.type = type;
         switch (type) {
@@ -123,11 +130,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public ViewDataBinding getBinding() {
+    public <T extends ViewDataBinding> T getBinding() {
         if (binding == null) {
             return null;
         } else {
-            return binding;
+            return (T) binding;
         }
     }
 
@@ -179,6 +186,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void setRefreshListener(SwipeRefreshLayout.OnRefreshListener refreshListener) {
         if (refreshLayout == null) return;
+        setRefreshLayout(true);
         refreshLayout.setOnRefreshListener(refreshListener);
     }
 

@@ -10,7 +10,7 @@ public final class Constant {
 
     public class URL {
 
-        public static final  String BASE = "";
+        public static final  String BASE = "http://127.0.0.1:8080";
 
         /**登录*/
         public static final String LOGIN = "";
