@@ -1,4 +1,4 @@
-package cn.lzh.base.Util;
+package cn.lzh.base.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

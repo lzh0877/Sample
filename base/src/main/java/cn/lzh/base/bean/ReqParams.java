@@ -3,8 +3,8 @@ package cn.lzh.base.bean;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.lzh.base.Util.Md5Util;
-import cn.lzh.base.Util.SharedPreferencesUtils;
+import cn.lzh.base.util.Md5Util;
+import cn.lzh.base.util.SharedPreferencesUtils;
 
 /**
  * TODO 需要手动刷新请求头数据 {@link #refreshParamsMap}

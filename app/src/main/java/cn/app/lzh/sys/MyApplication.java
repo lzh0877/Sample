@@ -2,7 +2,6 @@ package cn.app.lzh.sys;
 
 import com.squareup.leakcanary.LeakCanary;
 
-import cn.lzh.base.Util.SharedPreferencesUtils;
 import cn.lzh.base.app.BaseApplication;
 
 /**
