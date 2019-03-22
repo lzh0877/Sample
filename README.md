@@ -7,6 +7,7 @@
 3.glide4
 使用
   1.初始化Application
+  
    public class MyApplication extends BaseApplication {
 
       @Override
@@ -22,6 +23,7 @@
   }
   
  2.创建Activity
+ 
   public class MainActivity extends BaseActivity {
   
     @Override
