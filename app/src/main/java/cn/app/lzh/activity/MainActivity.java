@@ -31,18 +31,18 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main, TYPE.BKF);
-//        tvHello.setText("adsad");
+        setContentView(R.layout.activity_main, TYPE.BKF);
+        tvHello.setText("adsad");
 
-        setContentView(R.layout.activity_main_dbing, TYPE.DBING);
-        binding = getBinding();
-        binding.tvHello.setText("asdasd");
+//        setContentView(R.layout.activity_main_dbing, TYPE.DBING);
+//        binding = getBinding();
+//        binding.tvHello.setText("asdasd");
 
         //显示空白页
 //        showBlankView(id, "提示");
 //        setBlankViewVisible(View.VISIBLE);
 
-        // 示例Retrofit
+        // 实例Retrofit
         userService = new RetrofitManager().getDefaultClient(UserService.class);
 
 //        disableToolbar(); // 不显示toolbar

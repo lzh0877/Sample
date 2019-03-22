@@ -13,9 +13,9 @@ public final class Constant {
         public static final  String BASE = "http://127.0.0.1:8080";
 
         /**登录*/
-        public static final String LOGIN = "";
+        public static final String LOGIN = "/test";
         /***/
-        public static final String USER_INFO = "";
+        public static final String USER_INFO = "/test/info";
     }
 
 }
