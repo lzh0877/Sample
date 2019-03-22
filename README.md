@@ -9,7 +9,6 @@
   1.初始化Application
   
    public class MyApplication extends BaseApplication {
-
       @Override
       public void onCreate() {
           super.onCreate();
@@ -25,7 +24,6 @@
  2.创建Activity
  
   public class MainActivity extends BaseActivity {
-  
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +33,6 @@
         setToolbar("Hello World", true);// 设置Toolbar标题
         
         showToast("Hello World");       // 显示Toast
-
     }
     ...
   }
