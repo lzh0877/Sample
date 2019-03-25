@@ -3,7 +3,6 @@ package cn.app.lzh.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,7 +16,6 @@ import cn.app.lzh.databinding.ActivityMainDbingBinding;
 import cn.app.lzh.rxandriod.CustomDisposable;
 import cn.app.lzh.service.UserService;
 import cn.lzh.base.activity.BaseActivity;
-import cn.lzh.base.listener.OnRetryRequestListener;
 import cn.lzh.base.net.rx.RetrofitManager;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
@@ -25,13 +23,16 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tv_hello)
     TextView tvHello;
+    @BindView(R.id.network)
+    TextView network;
     private UserService userService;
     private ActivityMainDbingBinding binding;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main, TYPE.BKF);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         tvHello.setText("adsad");
 
 //        setContentView(R.layout.activity_main_dbing, TYPE.DBING);
@@ -46,19 +47,19 @@ public class MainActivity extends BaseActivity {
         userService = new RetrofitManager().getDefaultClient(UserService.class);
 
 //        disableToolbar(); // 不显示toolbar
-        setToolbar("Hello World", true);// 设置toolbar
-
-        showToast("Hello World");
+//        setToolbar("Hello World", true);// 设置toolbar
+//
+//        showToast("Hello World");
 
         // 设置下拉刷新事件
-        setRefreshListener(() -> {
-            refreshLayout.setEnabled(false);
-        });
+//        setRefreshListener(() -> {
+//            refreshLayout.setEnabled(false);
+//        });
 
         // 设置显示空白页时刷新事件
-        setOnRetryRequestListener(v -> {
-
-        });
+//        setOnRetryRequestListener(v -> {
+//
+//        });
     }
 
     @OnClick({R.id.network, R.id.tv_hello})
@@ -76,8 +77,7 @@ public class MainActivity extends BaseActivity {
                         });
                 break;
             case R.id.tv_hello:
-                startActivity(new Intent(mContext, LoginActivity.class));
-                finish();
+                startActivity(new Intent(mContext, TestActivity.class));
                 break;
         }
     }

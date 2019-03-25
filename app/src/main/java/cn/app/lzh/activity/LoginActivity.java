@@ -71,15 +71,16 @@ public class LoginActivity extends BaseActivity {
                             showToast("登录失败");
                         }
                     }
-                });
+    });
     }
 
     @OnClick({R.id.textView})
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.textView:
-                login();
-                break;
+//                login();
+                throw new NullPointerException();
+//                break;
         }
     }
 }

@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import cn.lzh.base.R;
+import cn.lzh.base.app.MyExceptionHandler;
 import cn.lzh.base.listener.OnRetryRequestListener;
 import cn.lzh.base.util.SysUtils;
 import cn.lzh.base.widget.ConsumerDialog;
@@ -55,6 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         dialog = new ConsumerDialog(mContext);
+        Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler(this));
     }
 
     @Override
